@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Simple Form</h2>
+
+<form action="/submit" method="post">
+    <input type="text" name="name" placeholder="Enter name">
+    
+    <!-- IMPORTANT: CSRF token included automatically -->
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p th:text="${message}"></p>
+
+</body>
+</html>
